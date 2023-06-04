@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input[type=text],
+    select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+    div.cntainer {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+
+    .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        width: 150px;
+        height: 40px;
+        background-color: #4CAF50;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .cntainer {
+        max-width: 500px;
+        margin: 50px auto;
+    }
+
+    .tip {
+        color: blueviolet;
+    }
+</style>
+
+<body>
+    <div class="cntainer">
+        <form action="#">
+            <div class="text-ctn">
+                <label for="fname">First Name</label>
+                <input type="text" class="fname" name="firstname" placeholder="Your name..">
+                <span class="tip"></span>
+            </div>
+            <!-- <input type="submit" value="Submit"> -->
+        </form>
+
+        <a href="#" class="btn">Add More</a>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+<script>
+    function textReplicate() {
+        jQuery('input[type="text"]').on('keyup', function () {
+            const value = jQuery(this).val();
+            jQuery(this).next().text(value);
+        });
+    }
+
+    textReplicate();
+
+    function clear() {
+        jQuery
+    }
+    jQuery('.btn').click(function () {
+        const newSet = jQuery('.text-ctn').last();
+        newSet.clone(true, false).appendTo('form');
+        newSet.find('input[type="text"]').val('');
+        newSet.find('span').text('');
+        textReplicate();
+    });
+
+</script>
+
+</html>
